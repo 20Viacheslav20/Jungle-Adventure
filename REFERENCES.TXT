@@ -1,0 +1,16 @@
+
+
+
+
+
+Téma: hra Jungle Adventure:
+	-Realizace v Unity 2021 LTS.
+	-Základní funkcionalita – Plošinovka v 2D prostoru, 1 hráč vs N CPU.
+	-Ovládání hráče pomocí klávesnice.
+	-Hráč i CPU jsou mobilní.
+	-Několik úrovní s unikátním terénem.
+	-Několik unikátních CPU.
+	-Zachování pokroku a vyšší rychlosti do souboru.
+	-Možné další rozšíření: 
+		varianta 1: hra více hráčů na jednom PC.
+		Varianta 2: přidání nových pozadí, nepřátel, skinů hráčů a úrovní.
