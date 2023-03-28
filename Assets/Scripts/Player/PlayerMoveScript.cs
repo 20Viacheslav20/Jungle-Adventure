@@ -14,7 +14,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     private enum MovementState { idle, running, jumping }
 
-    private MovementState state = MovementState.idle;
+    //private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
     void Start()
