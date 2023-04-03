@@ -10,7 +10,9 @@ public class PlayerMoveScript : MonoBehaviour
     private float dirX = 0f;
 
     [SerializeField] private float Speed = 6f;
-    [SerializeField] private float JumpForce = 8f;
+    [SerializeField] private float JumpForce = 4f;
+
+    public bool IsOnGround = true;
 
     private enum MovementState { idle, running, jumping }
 
@@ -33,7 +35,7 @@ public class PlayerMoveScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) 
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, JumpForce);
-            
+           // IsOnGround = false;     
         }
 
         UpdateAnimationState();
@@ -56,5 +58,10 @@ public class PlayerMoveScript : MonoBehaviour
             Animator.SetBool("running", false);
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    IsOnGround = true;
+    //}
 
 }
