@@ -5,19 +5,17 @@ using UnityEngine;
 public class MobsMove : MonoBehaviour
 {
     private Transform currentPoint;
-    private Rigidbody2D Rigidbody2D;
-    private SpriteRenderer SpriteRenderer;
+    private Rigidbody2D rigidbody2d;
 
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
 
-    [SerializeField] public float speed;
+    [SerializeField] private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
-        SpriteRenderer = GetComponent<SpriteRenderer>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
         currentPoint = pointA.transform;
     }
 
@@ -26,32 +24,33 @@ public class MobsMove : MonoBehaviour
     {
         if (currentPoint == pointA.transform)
         {
-            Rigidbody2D.velocity = new Vector2(speed, 0);
+            rigidbody2d.velocity = new Vector2(speed, 0);
         }
         else
         {
-            Rigidbody2D.velocity = new Vector2(-speed, 0);
+            rigidbody2d.velocity = new Vector2(-speed, 0);
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
-            flip();
+            Flip();
             currentPoint = pointA.transform;
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
         {
-            flip();
+            Flip();
             currentPoint = pointB.transform;
         }
         
     }
 
-    private void flip()
+    private void Flip()
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
 
 }

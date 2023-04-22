@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Gem : MonoBehaviour
 {
 
 
@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+           
         }
     }
 
