@@ -7,9 +7,11 @@ public class MobsMoveScript : MonoBehaviour
     private Transform currentPoint;
     private Rigidbody2D rigidbody2d;
 
+
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
     [SerializeField] private bool isMoveVertical;
+    
 
     [SerializeField] private float speed;
 

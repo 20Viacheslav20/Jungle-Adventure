@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,6 +47,7 @@ public class PlayerControllerScript : MonoBehaviour
             rigidbody2d.velocity = new Vector2(dirX * speed, rigidbody2d.velocity.y);
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) && IsGrounded()) 
             {
+                GetComponent<AudioSource>().Play();
                 rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
             }
             UpdateAnimationState();
@@ -64,28 +64,12 @@ public class PlayerControllerScript : MonoBehaviour
         }
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            if (collision.contacts[0].normal == Vector2.up)
-            {
-                rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, 4f);
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-                IncrementLives();
-            }
-        }
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("KillZone"))
         {
-            IncrementLives();
+            DecrementLives();
         }
     }
 
@@ -152,13 +136,17 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
-    private void IncrementLives()
+    public void DecrementLives()
     {
         collector.CountOfLives--;
         if (collector.CountOfLives != 0)
+        {
             Respawn();
+        }
         else
+        {
             Die();
+        }
     }
 
 }
