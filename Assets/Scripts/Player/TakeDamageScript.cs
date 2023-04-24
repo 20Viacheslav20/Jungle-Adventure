@@ -6,6 +6,9 @@ public class TakeDamageScript : MonoBehaviour
 {
     private Animator animator;
     private PlayerControllerScript playerControllerScript;
+
+    [SerializeField] private AudioSource deathSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class TakeDamageScript : MonoBehaviour
         {
             if (collision.contacts[0].normal == Vector2.down)
             {
+                deathSoundEffect.Play();
                 Rigidbody2D playerRigidBody2d = collision.gameObject.GetComponent<Rigidbody2D>();
                 collision.gameObject.GetComponent<AudioSource>().Play();
                 playerRigidBody2d.velocity = new Vector2(playerRigidBody2d.velocity.x, 4f);

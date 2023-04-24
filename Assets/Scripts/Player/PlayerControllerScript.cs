@@ -16,7 +16,12 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private LayerMask layerMask;
-    
+
+    [SerializeField] private AudioClip deathSoundEffect;
+    [SerializeField] private AudioClip jumpSoundEffect;
+    [SerializeField] private AudioClip getDamageSoundEffect;
+
+    private AudioSource audioSource;
     private enum MovementState 
     { 
         Idle = 0, 
@@ -30,6 +35,7 @@ public class PlayerControllerScript : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+        audioSource = GetComponent<AudioSource>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -47,7 +53,7 @@ public class PlayerControllerScript : MonoBehaviour
             rigidbody2d.velocity = new Vector2(dirX * speed, rigidbody2d.velocity.y);
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) && IsGrounded()) 
             {
-                GetComponent<AudioSource>().Play();
+                SetSoundEffect(jumpSoundEffect);
                 rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
             }
             UpdateAnimationState();
@@ -63,6 +69,11 @@ public class PlayerControllerScript : MonoBehaviour
             RestartLevel();
         }
 
+        if (Input.GetKey(KeyCode.H))
+        {
+            DecrementLives();
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -75,6 +86,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Die()
     {
+        SetSoundEffect(deathSoundEffect);
         animator.SetTrigger("death");
         rigidbody2d.bodyType = RigidbodyType2D.Static;
     }
@@ -138,6 +150,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     public void DecrementLives()
     {
+        SetSoundEffect(getDamageSoundEffect);
         collector.CountOfLives--;
         if (collector.CountOfLives != 0)
         {
@@ -147,6 +160,12 @@ public class PlayerControllerScript : MonoBehaviour
         {
             Die();
         }
+    }
+
+    private void SetSoundEffect(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
 }
