@@ -8,6 +8,7 @@ TagManager:
   - Cherry
   - Enemy
   - KillZone
+  - FinishFlag
   layers:
   - Default
   - TransparentFX
