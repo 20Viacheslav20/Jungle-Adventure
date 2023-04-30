@@ -47,3 +47,4 @@ kód sledování kamery za hráčem - own
 kód získaní poškození - own
 kód přepnutí na další scénu - own
 kód pro timer - own
+kód pohyby hráče - own
