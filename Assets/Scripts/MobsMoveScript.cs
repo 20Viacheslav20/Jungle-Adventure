@@ -12,7 +12,6 @@ public class MobsMoveScript : MonoBehaviour
     [SerializeField] private GameObject pointB;
     [SerializeField] private bool isMoveVertical;
     
-
     [SerializeField] private float speed;
 
     // Start is called before the first frame update

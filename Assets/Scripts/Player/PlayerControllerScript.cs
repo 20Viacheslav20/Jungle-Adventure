@@ -11,7 +11,7 @@ public class PlayerControllerScript : MonoBehaviour
     private ItemCollectorScript collector;
     private Vector2 startPosition;
 
-    private float dirX = 0f;
+    private float moveByX = 0f;
 
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpForce = 6f;
@@ -29,7 +29,7 @@ public class PlayerControllerScript : MonoBehaviour
         Jumping = 2
     }
 
-    private MovementState state = MovementState.Idle;
+    private MovementState actualState = MovementState.Idle;
 
     // Start is called before the first frame update
     void Start()
@@ -46,11 +46,10 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (rigidbody2d.bodyType != RigidbodyType2D.Static)
         {
-            dirX = Input.GetAxis("Horizontal");
-            rigidbody2d.velocity = new Vector2(dirX * speed, rigidbody2d.velocity.y);
+            moveByX = Input.GetAxis("Horizontal");
+            rigidbody2d.velocity = new Vector2(moveByX * speed, rigidbody2d.velocity.y);
             if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) && IsGrounded()) 
             {
                 SetSoundEffect(jumpSoundEffect);
@@ -59,19 +58,9 @@ public class PlayerControllerScript : MonoBehaviour
             UpdateAnimationState();
         }
 
-        if (Input.GetKey(KeyCode.G))
-        {
-            Die();
-        }
-
         if (Input.GetKey(KeyCode.R))
         {
             RestartLevel();
-        }
-
-        if (Input.GetKey(KeyCode.H))
-        {
-            DecrementLives();
         }
 
     }
@@ -93,27 +82,26 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void UpdateAnimationState()
     {
-
-        if (dirX > 0f)
+        if (moveByX > 0f)
         {
             spriteRenderer.flipX = false;
-            state = MovementState.Running;
+            actualState = MovementState.Running;
         }
-        else if (dirX < 0f)
+        else if (moveByX < 0f)
         {
             spriteRenderer.flipX = true;
-            state = MovementState.Running;
+            actualState = MovementState.Running;
         }
         else
         {
-            state = MovementState.Idle;
+            actualState = MovementState.Idle;
         }
 
-        if (!IsGrounded() /*&& (rigidbody2d.velocity.y > .1f || rigidbody2d.velocity.y <= -.1f)*/)
+        if (!IsGrounded())
         {
-            state = MovementState.Jumping;
+            actualState = MovementState.Jumping;
         }
-        animator.SetInteger("state", (int)state);
+        animator.SetInteger("state", (int)actualState);
     }
 
     private void Respawn()

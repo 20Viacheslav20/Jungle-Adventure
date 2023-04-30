@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - KillZone
   - FinishFlag
+  - UI
   layers:
   - Default
   - TransparentFX

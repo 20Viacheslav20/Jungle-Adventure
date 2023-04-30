@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  jumpForce: 6
+  jumpForce: 7
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemsText: {fileID: 0}
   livesText: {fileID: 0}
+  CountOfGems: 0
   CountOfLives: 4
 --- !u!82 &979477889334312823
 AudioSource:

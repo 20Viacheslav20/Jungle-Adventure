@@ -10,9 +10,9 @@ public class ItemCollectorScript : MonoBehaviour
     [SerializeField] private Text livesText;
 
 
-    private int countOfGems = 0;
     private int countOfGemsOnLevel;
 
+    public int CountOfGems = 0;
     public int CountOfLives = 4;
 
     void Start()
@@ -33,7 +33,7 @@ public class ItemCollectorScript : MonoBehaviour
             collision.gameObject.GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<Animator>().SetTrigger("ItemFeedback");
             Destroy(collision.gameObject, 0.2f);
-            countOfGems++;         
+            CountOfGems++;         
         }
 
         if (collision.gameObject.CompareTag("Cherry"))
@@ -48,7 +48,7 @@ public class ItemCollectorScript : MonoBehaviour
 
     private void UpdateText()
     {
-        gemsText.text = $"Gems: {countOfGems}/{countOfGemsOnLevel}";
+        gemsText.text = $"Gems: {CountOfGems}/{countOfGemsOnLevel}";
         livesText.text = $"Lives: {CountOfLives}";
     }
 }
