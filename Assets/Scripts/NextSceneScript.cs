@@ -25,6 +25,7 @@ public class NextSceneScript : MonoBehaviour
             int buildIndex = SceneManager.GetActiveScene().buildIndex;
             if (buildIndex == 2)
             {
+                saveGameScript.SaveData();
                 return;
             } else
             {
