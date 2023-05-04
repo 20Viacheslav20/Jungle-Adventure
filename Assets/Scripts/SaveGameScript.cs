@@ -38,10 +38,10 @@ public class SaveGameScript : MonoBehaviour
     {
         PlayerData newData = new PlayerData
         {
-            Level = SceneManager.GetActiveScene().buildIndex + 1,
+            Level = SceneManager.GetActiveScene().buildIndex,
             CountOfGems = itemCollectorScript.CountOfGems,
             CountOfLive = itemCollectorScript.CountOfLives,
-            ScoreTime = timerScript.CurrentTime
+            ScoreTime = Mathf.FloorToInt(timerScript.CurrentTime)
         };
         LoadData();
 
@@ -60,6 +60,13 @@ public class SaveGameScript : MonoBehaviour
             string json = reader.ReadToEnd();
 
             playerDataWraper = JsonUtility.FromJson<PlayerDataWraper>(json);
+            if (playerDataWraper == null)
+            {
+                playerDataWraper = new()
+                {
+                    playerData = Array.Empty<PlayerData>()
+                };
+            }
         } catch 
         {
             return;
@@ -100,10 +107,5 @@ public class SaveGameScript : MonoBehaviour
         } 
     }
 
-    [System.Serializable]
-    public class PlayerDataWraper
-    {
-        public PlayerData[] playerData;
-    }
 
 }
