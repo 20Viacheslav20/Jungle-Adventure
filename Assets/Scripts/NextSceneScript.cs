@@ -22,16 +22,10 @@ public class NextSceneScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            int buildIndex = SceneManager.GetActiveScene().buildIndex;
-            if (buildIndex == 3)
-            {
-                saveGameScript.SaveData();
-                return;
-            } else
-            {
-                saveGameScript.SaveData();
-                SceneManager.LoadScene(buildIndex + 1);
-            }
+            int buildIndex = SceneManager.GetActiveScene().buildIndex;            
+            saveGameScript.SaveData();
+            SceneManager.LoadScene(buildIndex + 1);
+            
         }
         
     }

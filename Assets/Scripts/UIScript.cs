@@ -25,20 +25,20 @@ public class UIScript : MonoBehaviour
     [SerializeField] private Text level3;
     [SerializeField] private Text scorel3;
 
+    private string path;
+
     private PlayerDataWraper playerDataWraper;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerDataWraper = new()
-        {
-            playerData = Array.Empty<PlayerData>()
-        };
+        path = Application.dataPath + "/data.json";
+        CreateWrapper();
         LoadData();
         if (playerDataWraper != null &&  playerDataWraper.playerData.Count() != 0)
         {
-            for(int i = 0; i < playerDataWraper.playerData.Length; i++) 
-            { 
+            for (int i = 0; i < playerDataWraper.playerData.Length; i++)
+            {
                 PlayerData playerData = playerDataWraper.playerData[i];
                 switch (playerData.Level)
                 {
@@ -67,26 +67,61 @@ public class UIScript : MonoBehaviour
     }
 
 
-    public void LoadData()
+    private void LoadData()
     {
         try
         {
-            using StreamReader reader = new StreamReader(Application.dataPath + "/data.json");
+            using StreamReader reader = new StreamReader(path);
             string json = reader.ReadToEnd();
 
             playerDataWraper = JsonUtility.FromJson<PlayerDataWraper>(json);
         }
         catch
         {
-            playerDataWraper = new()
-            {
-                playerData = Array.Empty<PlayerData>()
-            };
+            CreateWrapper();
         }
     }
 
-    public void LoadLevel(int number)
+    public void DeleteData()
+    {
+        CreateWrapper();
+        string jsonData = JsonUtility.ToJson(playerDataWraper, true);
+        using StreamWriter writer = new StreamWriter(path);
+        writer.Write(jsonData);
+        DeleteUIText();
+    }
+
+    public void LoadScene(int number)
     {
         SceneManager.LoadScene(number);
+
     }
+
+    public void CreateWrapper()
+    {
+        playerDataWraper = new()
+        {
+            playerData = Array.Empty<PlayerData>()
+        };
+    }
+
+    private void DeleteUIText()
+    {
+        clLevel1.text = "";
+        cgLevel1.text = "";
+        level1.text = "";
+        scorel1.text = "";
+
+        clLevel2.text = "";
+        cgLevel2.text = "";
+        level2.text = "";
+        scorel2.text = "";
+
+        clLevel3.text = "";
+        cgLevel3.text = "";
+        level3.text = "";
+        scorel3.text = "";
+    }
+
+
 }

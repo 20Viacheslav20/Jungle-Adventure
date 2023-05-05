@@ -50,7 +50,7 @@ public class PlayerControllerScript : MonoBehaviour
         {
             moveByX = Input.GetAxis("Horizontal");
             rigidbody2d.velocity = new Vector2(moveByX * speed, rigidbody2d.velocity.y);
-            var a = IsGrounded();
+           
             if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && IsGrounded()) 
             {
                 SetSoundEffect(jumpSoundEffect);
