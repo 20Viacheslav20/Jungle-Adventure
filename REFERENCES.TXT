@@ -16,23 +16,29 @@ zvuk smrti - /Assets/Sounds/RPG Essentials Sound Effects/* - https://assetstore.
 
 tiles - /Assets/Tiles/* - https://jesse-m.itch.io/jungle-pack
 
+článek na pohyb hráče - https://medium.com/@chamo.wijetunga/movement-of-a-2d-player-in-unity-aff2b8f02fb5
 článek na práce z Sprite Editor: Custom Physics Shape - https://docs.unity3d.com/Manual/CustomPhysicsShape.html
-článek na zapamatování highscore - https://prasetion.medium.com/saving-data-as-json-in-unity-4419042d1334
+článek na save/load highscore - https://prasetion.medium.com/saving-data-as-json-in-unity-4419042d1334
 článek na získání aktuálního čísla scény - https://answers.unity.com/questions/132329/current-scene-number.html
+článek na volání funkce z animace - https://docs.unity3d.com/540/Documentation/Manual/animeditor-AnimationEvents.html
+článek na ovládaní camery - https://www.toptal.com/unity-unity3d/2d-camera-in-unity
+článek na otevření scény - https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
 
 YT tutoriál na práce z Tile Palette - https://www.youtube.com/watch?v=on9nwbZngyw
 YT tutoriál na práce z Animace - https://www.youtube.com/watch?v=hkaysu1Z-N8&t=218s
 YT tutoriál na vytvoření nepřítele - https://www.youtube.com/watch?v=RuvfOl8HhhM&t=392s
 YT tutoriál na respawn hráče - https://www.youtube.com/watch?v=odStG_LfPMQ
 YT tutoriál na blikání při poškození - https://www.youtube.com/watch?v=3aWgstSctMw
-YT tutoriál na zapamatování highscore - https://www.youtube.com/watch?v=aSNj2nvSyD4
+YT tutoriál na save/load highscore - https://www.youtube.com/watch?v=aSNj2nvSyD4
 YT tutoriál na přidaní pozadí - https://www.youtube.com/watch?v=GNFrhwAvrME
 YT tutoriál na kontrolu skoku - https://www.youtube.com/watch?v=LEUhxe9vUOM
+YT tutoriál na práce s tlačítky  - https://www.youtube.com/watch?v=Vfgp-aDZZis
 
+kód sledování kamery za hráčem  - https://www.toptal.com/unity-unity3d/2d-camera-in-unity
+kód logiky nepřítele - https://www.youtube.com/watch?v=RuvfOl8HhhM&t=392s
 kód přidaní jenom vyšší rychlosti do souboru - own
 kód sbírky položek - own
-kód sledování kamery za hráčem - own
 kód získaní poškození - own
-kód přepnutí na další scénu - own
+kód přepnutí na další scénu - own/https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
 kód pro timer - own
 kód pohyby hráče - own
