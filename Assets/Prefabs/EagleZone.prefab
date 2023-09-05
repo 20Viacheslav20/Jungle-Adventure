@@ -109,8 +109,8 @@ GameObject:
   - component: {fileID: 7109799607232719094}
   - component: {fileID: 7109799607232719089}
   - component: {fileID: 7109799607232719088}
-  - component: {fileID: 7109799607232719095}
   - component: {fileID: 7109799607232719050}
+  - component: {fileID: 5240243909884485086}
   - component: {fileID: 7109799607232719051}
   m_Layer: 0
   m_Name: Eagle
@@ -253,22 +253,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &7109799607232719095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7109799607232719091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea2210a12a061b4fb72b96d3691be79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 7109799606051402219}
-  pointB: {fileID: 7109799607228399302}
-  isMoveVertical: 1
-  speed: 1
 --- !u!114 &7109799607232719050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +266,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSoundEffect: {fileID: 7109799607232719051}
+--- !u!114 &5240243909884485086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109799607232719091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74f4f761d63b87429da86b3f0ed5da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 7109799606051402219}
+  pointB: {fileID: 7109799607228399302}
+  isMoveVertical: 1
+  speed: 1
 --- !u!82 &7109799607232719051
 AudioSource:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ AudioSource:
   m_GameObject: {fileID: 7109799607232719091}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2438549483991035495, guid: ce1ec48fc4400f74da2006c668d8d4f9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 78f7b4c69358be24e9baa04ad9bbb5b2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -58,12 +58,6 @@ public class PlayerControllerScript : MonoBehaviour
             }
             UpdateAnimationState();
         }
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            RestartLevel();
-        }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -109,13 +103,6 @@ public class PlayerControllerScript : MonoBehaviour
     {
         StartCoroutine(Blink());
         transform.position = startPosition;    
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        rigidbody2d.bodyType = RigidbodyType2D.Dynamic;
-        collector.CountOfLives = 4;
     }
 
     private bool IsGrounded()

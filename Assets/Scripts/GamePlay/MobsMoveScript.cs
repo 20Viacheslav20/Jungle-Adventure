@@ -7,7 +7,6 @@ public class MobsMoveScript : MonoBehaviour
     private Transform currentPoint;
     private Rigidbody2D rigidbody2d;
 
-
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
     [SerializeField] private bool isMoveVertical;
@@ -24,7 +23,7 @@ public class MobsMoveScript : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        if (isMoveVertical)
+        if (isMoveVertical) // top-down
         {
             if (currentPoint == pointA.transform)
             {
@@ -34,7 +33,7 @@ public class MobsMoveScript : MonoBehaviour
             {
                 rigidbody2d.velocity = new Vector2(0, speed);
             }
-        } else
+        } else // left-right
         {
             if (currentPoint == pointA.transform)
             {

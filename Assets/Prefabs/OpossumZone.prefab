@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 8418286284568765715}
   - component: {fileID: 8418286284568765714}
   - component: {fileID: 8418286284568765717}
-  - component: {fileID: 8418286284568765712}
   - component: {fileID: 8418286284568765713}
   - component: {fileID: 8418286284568765710}
+  - component: {fileID: 1451270438172516405}
   - component: {fileID: 8418286284568765711}
   - component: {fileID: 8418286284568765708}
   m_Layer: 0
@@ -144,22 +144,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8418286284568765712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8418286284568765716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea2210a12a061b4fb72b96d3691be79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 8418286286110715159}
-  pointB: {fileID: 8418286284683318196}
-  isMoveVertical: 0
-  speed: 1
 --- !u!50 &8418286284568765713
 Rigidbody2D:
   serializedVersion: 4
@@ -207,6 +191,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7705008, y: 1.1603963}
   m_EdgeRadius: 0
+--- !u!114 &1451270438172516405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418286284568765716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74f4f761d63b87429da86b3f0ed5da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 8418286286110715159}
+  pointB: {fileID: 8418286284683318196}
+  isMoveVertical: 0
+  speed: 1
 --- !u!114 &8418286284568765711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ AudioSource:
   m_GameObject: {fileID: 8418286284568765716}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2438549483991035495, guid: ce1ec48fc4400f74da2006c668d8d4f9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 78f7b4c69358be24e9baa04ad9bbb5b2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

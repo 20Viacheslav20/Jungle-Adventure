@@ -91,12 +91,6 @@ public class UIScript : MonoBehaviour
         DeleteUIText();
     }
 
-    public void LoadScene(int number)
-    {
-        SceneManager.LoadScene(number);
-
-    }
-
     public void CreateWrapper()
     {
         playerDataWraper = new()

@@ -6496,7 +6496,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4509476145021579572, guid: 2c8714d8fa8f84448ae3fc6232c3a17d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c8714d8fa8f84448ae3fc6232c3a17d, type: 3}
 --- !u!4 &1530284723 stripped
 Transform:
@@ -7069,6 +7070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3924458064921732906, guid: a64c08996d12aa4428630a4ac234afc5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 703433001}
     - target: {fileID: 2837911441962649162, guid: a64c08996d12aa4428630a4ac234afc5, type: 3}
       propertyPath: player
       value: 
@@ -7121,7 +7126,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2837911441962649162, guid: a64c08996d12aa4428630a4ac234afc5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a64c08996d12aa4428630a4ac234afc5, type: 3}
 --- !u!1001 &4677931103857681812
 PrefabInstance:
@@ -7219,8 +7225,16 @@ PrefabInstance:
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 4677931104013449730, guid: 46af81f2bbbc98343a2ee41535d2e8e5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677931104013449730, guid: 46af81f2bbbc98343a2ee41535d2e8e5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677931104013449730, guid: 46af81f2bbbc98343a2ee41535d2e8e5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 875.2
+      value: -116
       objectReference: {fileID: 0}
     - target: {fileID: 4677931104013449730, guid: 46af81f2bbbc98343a2ee41535d2e8e5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7283,5 +7297,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9bba93d2417477f43b07b3b22256d519, type: 3}

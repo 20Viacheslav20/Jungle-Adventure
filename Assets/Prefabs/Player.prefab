@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 979477889334312776}
   - component: {fileID: 979477889334312819}
   - component: {fileID: 979477889334312780}
+  - component: {fileID: 979477889334312823}
   - component: {fileID: 979477889334312781}
   - component: {fileID: 979477889334312818}
-  - component: {fileID: 979477889334312823}
+  - component: {fileID: 1372093587552224007}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,42 +158,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &979477889334312781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979477889334312777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35095e8c810c6f4fa5d466f1b78540e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  jumpForce: 7
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  deathSoundEffect: {fileID: 8300000, guid: 78f7b4c69358be24e9baa04ad9bbb5b2, type: 3}
-  jumpSoundEffect: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
-  getDamageSoundEffect: {fileID: 8300000, guid: 378e53e6061ad9040a78e63ae9ab435f, type: 3}
---- !u!114 &979477889334312818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979477889334312777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0710bf346275274468f34b9c5fd02d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemsText: {fileID: 0}
-  livesText: {fileID: 0}
-  CountOfGems: 0
-  CountOfLives: 4
 --- !u!82 &979477889334312823
 AudioSource:
   m_ObjectHideFlags: 0
@@ -202,7 +167,7 @@ AudioSource:
   m_GameObject: {fileID: 979477889334312777}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2438549483991035495, guid: ce1ec48fc4400f74da2006c668d8d4f9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -289,3 +254,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &979477889334312781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979477889334312777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35095e8c810c6f4fa5d466f1b78540e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  jumpForce: 7
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  deathSoundEffect: {fileID: 8300000, guid: 78f7b4c69358be24e9baa04ad9bbb5b2, type: 3}
+  jumpSoundEffect: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  getDamageSoundEffect: {fileID: 8300000, guid: 378e53e6061ad9040a78e63ae9ab435f, type: 3}
+--- !u!114 &979477889334312818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979477889334312777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0710bf346275274468f34b9c5fd02d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemsText: {fileID: 0}
+  livesText: {fileID: 0}
+  CountOfGems: 0
+  CountOfLives: 4
+--- !u!114 &1372093587552224007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979477889334312777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a46350ac8e7834db35b30ca614a75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

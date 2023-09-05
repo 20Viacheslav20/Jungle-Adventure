@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextSceneScript : MonoBehaviour
+public class FinishLvlScript : MonoBehaviour
 {
     private SaveGameScript saveGameScript;
     // Start is called before the first frame update
@@ -12,21 +12,15 @@ public class NextSceneScript : MonoBehaviour
        saveGameScript = GameObject.FindGameObjectWithTag("Background").GetComponent<SaveGameScript>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             int buildIndex = SceneManager.GetActiveScene().buildIndex;            
             saveGameScript.SaveData();
-            SceneManager.LoadScene(buildIndex + 1);
-            
+            SceneManager.LoadScene(buildIndex + 1);     
         }
         
     }
+
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4509476145021579567}
   - component: {fileID: 4509476145021579566}
   - component: {fileID: 4509476145021579563}
-  - component: {fileID: 4509476145021579572}
+  - component: {fileID: 7214323607520462489}
   m_Layer: 0
   m_Name: Finish
   m_TagString: FinishFlag
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &4509476145021579572
+--- !u!114 &7214323607520462489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +164,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4509476145021579565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0accd12e31fb64dbd78f7e5e5918c1, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d82fd37b39c7d4bb62b51ca03272c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -3,10 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static SaveGameScript;
+
 
 public class SaveGameScript : MonoBehaviour
 {
@@ -60,7 +59,7 @@ public class SaveGameScript : MonoBehaviour
             string json = reader.ReadToEnd();
 
             playerDataWraper = JsonUtility.FromJson<PlayerDataWraper>(json);
-            if (playerDataWraper == null)
+            if (playerDataWraper is null)
             {
                 playerDataWraper = new()
                 {
