@@ -2,7 +2,7 @@ Jungle Adventure is an exciting 2D game developed using the Unity Framework. Exp
 
 Game control
 
-A - move left
+A - move left 
 D - move right
 W - move up
 R - restart lvl
