@@ -1,22 +1,3 @@
 {
-    "playerData": [
-        {
-            "CountOfLive": 4,
-            "CountOfGems": 5,
-            "Level": 4,
-            "ScoreTime": 25.0
-        },
-        {
-            "CountOfLive": 5,
-            "CountOfGems": 4,
-            "Level": 5,
-            "ScoreTime": 9.0
-        },
-        {
-            "CountOfLive": 5,
-            "CountOfGems": 1,
-            "Level": 6,
-            "ScoreTime": 11.0
-        }
-    ]
+    "playerData": []
 }

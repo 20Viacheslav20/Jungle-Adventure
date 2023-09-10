@@ -9,7 +9,6 @@ public class ItemCollectorScript : MonoBehaviour
     [SerializeField] private Text gemsText;
     [SerializeField] private Text livesText;
 
-
     private int countOfGemsOnLevel;
 
     public int CountOfGems = 0;

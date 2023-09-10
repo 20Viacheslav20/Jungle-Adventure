@@ -31,6 +31,9 @@ public class PlayerControllerScript : MonoBehaviour
 
     private MovementState actualState = MovementState.Idle;
 
+    public int CountOfDies = 0;
+    public int CountOfEnemies = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,6 +134,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (collector.CountOfLives != 0)
         {
             Respawn();
+            CountOfDies++;
         }
         else
         {

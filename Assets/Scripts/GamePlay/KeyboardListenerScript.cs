@@ -7,12 +7,14 @@ public class KeyboardListenerScript : MonoBehaviour
 {
     private Rigidbody2D rigidbody2d;
     private ItemCollectorScript collector;
+    private PauseScript pauseScript;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         collector = GetComponent<ItemCollectorScript>();
+        pauseScript = GameObject.FindGameObjectWithTag("UI").GetComponent<PauseScript>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class KeyboardListenerScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(4);
+            pauseScript.PauseResumeGame();
         }
 
         if (Input.GetKey(KeyCode.R))

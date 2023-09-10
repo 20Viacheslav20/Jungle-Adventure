@@ -1,47 +1,48 @@
-using Assets.Scripts.Player;
+using Assets.Models;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 public class SaveGameScript : MonoBehaviour
 {
-    private ItemCollectorScript itemCollectorScript;
+    //private ItemCollectorScript itemCollectorScript;
     private TimerScript timerScript;
     private PlayerDataWraper playerDataWraper;
+    private PlayerControllerScript playerController;
 
     private string path;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject plyer = GameObject.FindGameObjectWithTag("Player");
-        itemCollectorScript = plyer.GetComponent<ItemCollectorScript>();
-        timerScript = GameObject.FindGameObjectWithTag("UI").GetComponent<TimerScript>();
         path = Application.dataPath + "/data.json";
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        playerController = player.GetComponent<PlayerControllerScript>();
+        timerScript = GameObject.FindGameObjectWithTag("UI").GetComponent<TimerScript>();
+        
+        //itemCollectorScript = player.GetComponent<ItemCollectorScript>();
+        
         playerDataWraper = new()
         {
             playerData = Array.Empty<PlayerData>()
         };
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SaveData()
     {
         PlayerData newData = new PlayerData
         {
-            Level = SceneManager.GetActiveScene().buildIndex,
-            CountOfGems = itemCollectorScript.CountOfGems,
-            CountOfLive = itemCollectorScript.CountOfLives,
+            Level = SceneManager.GetActiveScene().buildIndex - 2,
+            //CountOfGems = itemCollectorScript.CountOfGems,
+            //CountOfLive = itemCollectorScript.CountOfLives,
+            CountOfDies = playerController.CountOfDies,
+            CountOfEnemies = playerController.CountOfEnemies,
             ScoreTime = Mathf.FloorToInt(timerScript.CurrentTime)
         };
+
         LoadData();
 
         AddData(ref playerDataWraper.playerData, newData);
@@ -58,7 +59,7 @@ public class SaveGameScript : MonoBehaviour
             using StreamReader reader = new StreamReader(path);
             string json = reader.ReadToEnd();
 
-            playerDataWraper = JsonUtility.FromJson<PlayerDataWraper>(json);
+            playerDataWraper = JsonUtility.FromJson<PlayerDataWraper>(json); // read data from file
             if (playerDataWraper is null)
             {
                 playerDataWraper = new()
@@ -77,6 +78,7 @@ public class SaveGameScript : MonoBehaviour
         for (int i = 0; i < playerDatas.Length; i++)
         {
             PlayerData actualData = playerDatas[i];
+            // data of lvl exists and new score is smaller
             if (actualData.Level == newPlayerData.Level && actualData.ScoreTime > newPlayerData.ScoreTime) 
             {
                 playerDatas[i] = newPlayerData;
@@ -84,24 +86,17 @@ public class SaveGameScript : MonoBehaviour
             }
         }
 
-        bool levelDataExist = false;
-        for (int i = 0; i < playerDatas.Length; i++)
-        {
-            if (playerDatas[i].Level == newPlayerData.Level)
-            {
-                levelDataExist = true;
-                break;
-            }
-        }
+        bool levelDataExist = playerDatas.ToList().Any(x => x.Level == newPlayerData.Level);
 
         if (playerDatas.Length == 0 || !levelDataExist)
         {
-            PlayerData[] newPlayerDataArray = { newPlayerData };
-
             PlayerData[] concatPlayerDataArray = new PlayerData[playerDataWraper.playerData.Length + 1];
 
+            // copy old data to new array with lenght (old + 1)
             Array.Copy(playerDataWraper.playerData, 0, concatPlayerDataArray, 0, playerDataWraper.playerData.Length);
-            Array.Copy(newPlayerDataArray, 0, concatPlayerDataArray, playerDataWraper.playerData.Length, newPlayerDataArray.Length);
+
+            concatPlayerDataArray[concatPlayerDataArray.Length - 1] = newPlayerData;
+
             playerDataWraper.playerData = concatPlayerDataArray;
         } 
     }

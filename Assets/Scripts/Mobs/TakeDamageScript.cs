@@ -29,6 +29,7 @@ public class TakeDamageScript : MonoBehaviour
                 playerRigidBody2d.velocity = new Vector2(playerRigidBody2d.velocity.x, 4f);
                 animator.SetTrigger("death");
                 Destroy(gameObject, 0.2f);
+                playerControllerScript.CountOfEnemies++;
             }
             else
             {

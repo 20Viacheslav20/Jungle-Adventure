@@ -15,12 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Best Scores.unity
     guid: 94146f6e33000f04896c7e4310bb5ab7
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: 2de8b64fc9584034db9667db9ec93ab4
-  - enabled: 1
-    path: Assets/Scenes/Pause.unity
-    guid: 5603f7a66a69df24a98f4a51bf64880a
-  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     [SerializeField] Text timerText;
+
     public float CurrentTime = 0f;
 
     // Start is called before the first frame update

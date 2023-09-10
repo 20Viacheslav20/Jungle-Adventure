@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class FinishLvlScript : MonoBehaviour
 {
+    [SerializeField] private bool isLastLvl;
+
     private SaveGameScript saveGameScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +21,13 @@ public class FinishLvlScript : MonoBehaviour
         {
             int buildIndex = SceneManager.GetActiveScene().buildIndex;            
             saveGameScript.SaveData();
-            SceneManager.LoadScene(buildIndex + 1);     
-        }
-        
+            if (isLastLvl)
+            {
+                SceneManager.LoadScene(1);
+            } else 
+            { 
+                SceneManager.LoadScene(buildIndex + 1);     
+            }
+        }   
     }
-
 }
