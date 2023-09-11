@@ -1,3 +1,10 @@
 {
-    "playerData": []
+    "playerData": [
+        {
+            "Level": 1,
+            "ScoreTime": 8.0,
+            "CountOfDies": 0,
+            "CountOfEnemies": 0
+        }
+    ]
 }
