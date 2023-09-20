@@ -20,14 +20,17 @@ public class KeyboardListenerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (!pauseScript.PauseGame)
         {
-            pauseScript.PauseResumeGame();
-        }
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                pauseScript.PauseResumeGame();
+            }
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            RestartLevel();
+            if (Input.GetKey(KeyCode.R))
+            {
+                RestartLevel();
+            }
         }
     }
 

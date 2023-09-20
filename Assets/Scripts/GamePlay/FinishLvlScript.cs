@@ -31,7 +31,7 @@ public class FinishLvlScript : MonoBehaviour
 
     private IEnumerator DelayedAction()
     {
-        yield return new WaitForSeconds(1.0f); 
+        yield return new WaitForSeconds(1.5f); 
 
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
         saveGameScript.SaveData();

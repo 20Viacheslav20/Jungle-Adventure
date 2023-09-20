@@ -20,6 +20,7 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] private AudioClip deathSoundEffect;
     [SerializeField] private AudioClip jumpSoundEffect;
     [SerializeField] private AudioClip getDamageSoundEffect;
+    [SerializeField] public Transform groundCheck;
 
     private AudioSource audioSource;
     private enum MovementState 
@@ -108,9 +109,14 @@ public class PlayerControllerScript : MonoBehaviour
         transform.position = startPosition;    
     }
 
+    //private bool IsGrounded()
+    //{
+    //    return Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, layerMask);
+    //}
+
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, layerMask);
+        return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.6f, 0.4f), CapsuleDirection2D.Horizontal, 0, layerMask);
     }
 
     private IEnumerator Blink()

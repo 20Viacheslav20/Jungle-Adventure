@@ -5,6 +5,18 @@
             "ScoreTime": 8.0,
             "CountOfDies": 0,
             "CountOfEnemies": 0
+        },
+        {
+            "Level": 2,
+            "ScoreTime": 9.0,
+            "CountOfDies": 0,
+            "CountOfEnemies": 0
+        },
+        {
+            "Level": 3,
+            "ScoreTime": 7.0,
+            "CountOfDies": 0,
+            "CountOfEnemies": 1
         }
     ]
 }

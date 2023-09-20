@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    [SerializeField] private bool pauseGame;
     [SerializeField] private GameObject pauseGameObject;
+    
+    public bool PauseGame;
 
     public void PauseResumeGame()
     {
-        if (pauseGame)
+        if (PauseGame)
         {
             Resume();
         } else
@@ -22,14 +23,14 @@ public class PauseScript : MonoBehaviour
     {
         pauseGameObject.SetActive(false);
         Time.timeScale = 1f;
-        pauseGame = false;
+        PauseGame = false;
     }
 
     public void Pause()
     {
         pauseGameObject.SetActive(true);
         Time.timeScale = 0f;
-        pauseGame = true;
+        PauseGame = true;
     }
 
     public void LoadMenu()
